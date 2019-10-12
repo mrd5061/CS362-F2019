@@ -105,11 +105,7 @@ int numHandCards(struct gameState *state);
 
 int handCard(int handNum, struct gameState *state);
 /* enum value of indexed card in player's hand */
-int baronCard(int choice1, struct gameState *state, int currentPlayer);
-int mineCard(int choice1, int choice2, struct gameState *state, int handPos, int currentPlayer);
-int minionCard(int choice1, int choice2, struct gameState *state, int handPos, int currentPlayer);
-int tributeCard(struct gameState *state, int nextPlayer, int currentPlayer, int tributeRevealedCards[]);
-int ambassadorCard(int choice1, int choice2, struct gameState *state, int handPos, int currentPlayer);
+
 int supplyCount(int card, struct gameState *state);
 /* How many of given card are left in supply */
 

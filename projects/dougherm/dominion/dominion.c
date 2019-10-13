@@ -1171,7 +1171,7 @@ int minionCard(int choice1, int choice2, struct gameState *state, int handPos, i
 int tributeCard(struct gameState *state, int nextPlayer, int currentPlayer)
 {
 	int i;
-	int tributeRevealedCards[2] = {-1, -1}
+	int tributeRevealedCards[2] = {-1, -1};
         if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1) 
 	{
             if (state->deckCount[nextPlayer] > 0) 
@@ -1181,7 +1181,7 @@ int tributeCard(struct gameState *state, int nextPlayer, int currentPlayer)
             }
             else if (state->discardCount[nextPlayer] > 0) 
 	    {
-                tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];OA
+                tributeRevealedCards[0] = state->discard[nextPlayer][state->discardCount[nextPlayer]-1];
                 state->discardCount[nextPlayer]--;
             }
             else 
@@ -1234,7 +1234,7 @@ int tributeCard(struct gameState *state, int nextPlayer, int currentPlayer)
 
         return 0;
 
-
+}
 
 int ambassadorCard(int choice1, int choice2, struct gameState *state, int handPos, int currentPlayer)
 {

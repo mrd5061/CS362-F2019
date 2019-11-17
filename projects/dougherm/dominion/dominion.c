@@ -167,11 +167,11 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
         //initialize hand size to zero
         state->handCount[i] = 0;
         state->discardCount[i] = 0;
-        //draw 5 cards
-        // for (j = 0; j < 5; j++)
-        //	{
-        //	  drawCard(i, state);
-        //	}
+    /*    draw 5 cards
+        for (j = 0; j < 5; j++)
+        {
+          drawCard(i, state);
+        }*/
     }
 
     //set embargo tokens to 0 for all supply piles
@@ -1037,7 +1037,7 @@ int baronCard(int choice1, struct gameState *state, int currentPlayer){
                     }
                 state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
                 state->handCount[currentPlayer]--;
-                card_not_discarded = 0;//Exit the loop
+               // card_not_discarded = 0;//Exit the loop
             }
             else if (p > state->handCount[currentPlayer]) 
 	    {
@@ -1094,7 +1094,7 @@ int mineCard(int choice1, int choice2, struct gameState *state, int handPos, int
         return -1;
     }
 
-    if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
+    if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
     {
         return -1;
     }
@@ -1143,7 +1143,7 @@ int minionCard(int choice1, int choice2, struct gameState *state, int handPos, i
         }
 
         //other players discard hand and redraw if hand size > 4
-        for (i = 0; i <=state->numPlayers; i++)
+        for (i = 0; i < state->numPlayers; i++)
         {
             if (i != currentPlayer)
             {
@@ -1209,7 +1209,7 @@ int tributeCard(struct gameState *state, int nextPlayer, int currentPlayer)
             tributeRevealedCards[0] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
             state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
             state->deckCount[nextPlayer]--;
-            tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];
+            tributeRevealedCards[1] = state->deck[nextPlayer][state->deckCount[nextPlayer]-1];	   
             state->deck[nextPlayer][state->deckCount[nextPlayer]--] = -1;
             state->deckCount[nextPlayer]--;
         }
@@ -1260,6 +1260,7 @@ int ambassadorCard(int choice1, int choice2, struct gameState *state, int handPo
         }
         if (k < choice2)
         {
+	    
             return -1;
         }
 

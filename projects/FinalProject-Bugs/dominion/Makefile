@@ -48,7 +48,7 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c uni
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest6.exe >> unittestresults.out
-	gcov -bf dominion.c >> unittestresults.
+	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest7.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out

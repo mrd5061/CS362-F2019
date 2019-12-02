@@ -21,18 +21,46 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-unittestresults: unittest4.c unittest5.c unittest6.c dominion.o rngs.o
+unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c unittest6.c unittest7.c unittest8.c unittest9.c unittest10.c dominion.o rngs.o
+	gcc -o unittest1.out -g unittest1.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest2.out -g unittest2.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest3.out -g unittest3.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest4.out -g unittest4.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest5.out -g unittest5.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest6.out -g unittest6.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest7.out -g unittest7.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest8.out -g unittest8.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest9.out -g unittest9.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest10.out -g unittest10.c dominion.o rngs.o $(CFLAGS)
+	./unittest1.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
+	./unittest2.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
+	./unittest3.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
 	./unittest4.out >> unittestresults.out
-	gcov -bf unittest4 >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest5.out >> unittestresults.out
-	gcov -bf unittest5 >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest6.out >> unittestresults.out
-	gcov -bf unittest6 >> unittestresults.
+	gcov -bf dominion.c >> unittestresults.
+	rm dominion.gcda
+	./unittest7.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
+	./unittest8.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
+	./unittest9.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
+	rm dominion.gcda
+	./unittest10.out >> unittestresults.out
+	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 
 player: player.c interface.o

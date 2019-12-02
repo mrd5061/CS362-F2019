@@ -22,44 +22,44 @@ runtests: testDrawCard
 	cat dominion.c.gcov >> unittestresult.out
 
 unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c unittest6.c unittest7.c unittest8.c unittest9.c unittest10.c dominion.o rngs.o
-	gcc -o unittest1.out -g unittest1.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest2.out -g unittest2.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest3.out -g unittest3.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest4.out -g unittest4.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest5.out -g unittest5.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest6.out -g unittest6.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest7.out -g unittest7.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest8.out -g unittest8.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest9.out -g unittest9.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest10.out -g unittest10.c dominion.o rngs.o $(CFLAGS)
-	./unittest1.out >> unittestresults.out
+	gcc -o unittest1.exe -g unittest1.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest2.exe -g unittest2.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest3.exe -g unittest3.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest4.exe -g unittest4.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest5.exe -g unittest5.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest6.exe -g unittest6.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest7.exe -g unittest7.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest8.exe -g unittest8.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest9.exe -g unittest9.c dominion.o rngs.o $(CFLAGS)
+	gcc -o unittest10.exe -g unittest10.c dominion.o rngs.o $(CFLAGS)
+	./unittest1.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest2.out >> unittestresults.out
+	./unittest2.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest3.out >> unittestresults.out
+	./unittest3.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest4.out >> unittestresults.out
+	./unittest4.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest5.out >> unittestresults.out
+	./unittest5.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest6.out >> unittestresults.out
+	./unittest6.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.
 	rm dominion.gcda
-	./unittest7.out >> unittestresults.out
+	./unittest7.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest8.out >> unittestresults.out
+	./unittest8.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest9.out >> unittestresults.out
+	./unittest9.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
-	./unittest10.out >> unittestresults.out
+	./unittest10.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 
@@ -69,4 +69,4 @@ player: player.c interface.o
 all: playdom player 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o *.exe playdom player  *.gcov *.gcda *.gcno *.so *.out testDrawCard

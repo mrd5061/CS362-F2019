@@ -73,7 +73,7 @@ void posCase(struct gameState *post, int currentPlayer, int nextPlayer) {
     r = cardEffect(tribute, 0, 0, 0, post, handPos, &coin_bonus);
 
     //increase buys by 1
-    pre.coins=4;
+    pre.coins+=4;
 
     //reduce number of actions because played tributeRevealedCard
     //pre.numActions--;

@@ -32,7 +32,7 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c uni
 	gcc -o unittest8.exe -g unittest8.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest9.exe -g unittest9.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest10.exe -g unittest10.c dominion.o rngs.o $(CFLAGS)
-	./unittest1.exe >> unittestresults.out
+	./unittest1.exe > unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest2.exe >> unittestresults.out

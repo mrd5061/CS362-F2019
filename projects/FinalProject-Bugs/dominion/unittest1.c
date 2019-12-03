@@ -21,12 +21,12 @@ int main()
 		G.hand[0][i] = -1;
 	}
 
-	cardEffect(mine,silver, gold, -1, &G,0, &coinBonus);
+	cardEffect(mine,1, gold, -1, &G,0, &coinBonus);
 	printf("Start Unit Test 1\n");
 	isTrue(G.handCount[0] == 1);
 	isTrue(G.hand[0][0] == gold);
-	isTrue(G.discardCount[0] == 1);
-	isTrue(G.discard[0][0] == mine);
+	isTrue(G.playedCardCount == 1);
+	isTrue(G.playedCards[1]!= silver);
 	printf("\n");
 	return 0;
 }

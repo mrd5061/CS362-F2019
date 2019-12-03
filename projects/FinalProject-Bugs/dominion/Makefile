@@ -27,7 +27,6 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c uni
 	gcc -o unittest3.exe -g unittest3.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest4.exe -g unittest4.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest5.exe -g unittest5.c dominion.o rngs.o $(CFLAGS)
-	gcc -o unittest6.exe -g unittest6.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest7.exe -g unittest7.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest8.exe -g unittest8.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest9.exe -g unittest9.c dominion.o rngs.o $(CFLAGS)
@@ -45,9 +44,6 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c uni
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest5.exe >> unittestresults.out
-	gcov -bf dominion.c >> unittestresults.out
-	rm dominion.gcda
-	./unittest6.exe >> unittestresults.out
 	gcov -bf dominion.c >> unittestresults.out
 	rm dominion.gcda
 	./unittest7.exe >> unittestresults.out

@@ -69,14 +69,14 @@ void posCase(struct gameState *post, int currentPlayer, int nextPlayer) {
 //run test function
 //----------------------------------------------------------------------------------
     //run tribute case of cardEffect()
-    //r = playCard(handPos, 0, 0, 0, post);
-    r = cardEffect(tribute, 0, 0, 0, post, handPos, &coin_bonus);
+    r = playCard(handPos, 0, 0, 0, post);
+    //r = cardEffect(tribute, 0, 0, 0, post, handPos, &coin_bonus);
 
     //increase coins by 2
     pre.coins+=2;
 
     //reduce number of actions because played tributeRevealedCard
-    //pre.numActions--;
+    pre.numActions--;
 
     //add two cards to tribute revealed array and then discard from next player's deck
     for(int j = 0; j<2; j++)

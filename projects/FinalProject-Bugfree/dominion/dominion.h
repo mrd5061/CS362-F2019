@@ -15,6 +15,10 @@
 
 /* hand# means index of a card in current active player's hand */
 
+#ifndef NUM_CARD_TYPES
+#define NUM_CARD_TYPES 26
+#endif // NUM_CARD_TYPES, total number of kingdom card types
+
 enum CARD
 {   curse = 0,
     estate,

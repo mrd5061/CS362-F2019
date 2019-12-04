@@ -21,7 +21,7 @@ runtests: testDrawCard
 	gcov dominion.c >> unittestresult.out
 	cat dominion.c.gcov >> unittestresult.out
 
-unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c unittest6.c unittest7.c unittest8.c unittest9.c unittest10.c dominion.o rngs.o
+unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c unittest7.c unittest8.c unittest9.c unittest10.c dominion.o rngs.o
 	gcc -o unittest1.exe -g unittest1.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest2.exe -g unittest2.c dominion.o rngs.o $(CFLAGS)
 	gcc -o unittest3.exe -g unittest3.c dominion.o rngs.o $(CFLAGS)
